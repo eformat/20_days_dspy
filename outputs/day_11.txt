@@ -1,0 +1,173 @@
+--- Day 11: Simple Tool Agent ---
+
+--- Building a dspy.ReAct Agent with a Calculator Tool ---
+Question: What is 15.5 multiplied by 8 and then divided by 2?
+Agent's Answer: 62.0
+
+Question: Calculate (345 + 123) * 5 / 2.
+Agent's Answer: 1170.0
+
+--- Inspecting LM History (last 2 ReAct trajectories) ---
+
+
+
+
+[2025-06-02T10:03:04.896856]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `next_thought` (str)
+2. `next_tool_name` (Literal['Calculator', 'finish'])
+3. `next_tool_args` (dict[str, Any])
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## next_thought ## ]]
+{next_thought}
+
+[[ ## next_tool_name ## ]]
+{next_tool_name}        # note: the value you produce must exactly match (no extra characters) one of: Calculator; finish
+
+[[ ## next_tool_args ## ]]
+{next_tool_args}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "additionalProperties": true}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Solve the given mathematical problem.
+        
+        You are an Agent. In each episode, you will be given the fields `question` as input. And you can see your past trajectory so far.
+        Your goal is to use one or more of the supplied tools to collect any necessary information for producing `answer`.
+        
+        To do this, you will interleave next_thought, next_tool_name, and next_tool_args in each turn, and also when finishing the task.
+        After each tool call, you receive a resulting observation, which gets appended to your trajectory.
+        
+        When writing next_thought, you may reason about the current situation and plan for future steps.
+        When selecting the next_tool_name and its next_tool_args, the tool must be one of:
+        
+        (1) Calculator, whose description is <desc>A tool to evaluate mathematical expressions and perform calculations.</desc>. It takes arguments {'expression': {'type': 'string'}} in JSON format.
+        (2) finish, whose description is <desc>Marks the task as complete. That is, signals that all information for producing the outputs, i.e. `answer`, are now available to be extracted.</desc>. It takes arguments {} in JSON format.
+
+
+User message:
+
+[[ ## question ## ]]
+Calculate (345 + 123) * 5 / 2.
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to calculate the expression (345 + 123) * 5 / 2. First, I will evaluate the addition inside the parentheses, then multiply the result by 5, and finally divide by 2. I can use the Calculator tool to perform this calculation in one step.
+
+[[ ## tool_name_0 ## ]]
+Calculator
+
+[[ ## tool_args_0 ## ]]
+{"expression": "(345 + 123) * 5 / 2"}
+
+[[ ## observation_0 ## ]]
+1170.0
+
+Respond with the corresponding output fields, starting with the field `[[ ## next_thought ## ]]`, then `[[ ## next_tool_name ## ]]` (must be formatted as a valid Python Literal['Calculator', 'finish']), then `[[ ## next_tool_args ## ]]` (must be formatted as a valid Python dict[str, Any]), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## next_thought ## ]]
+I have calculated the expression and the result is 1170.0. Since I have all the information needed to complete the task, I will finish now.
+
+[[ ## next_tool_name ## ]]
+finish
+
+[[ ## next_tool_args ## ]]
+{}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:04.898077]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (float): numerical answer to the problem
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Solve the given mathematical problem.
+
+
+User message:
+
+[[ ## question ## ]]
+Calculate (345 + 123) * 5 / 2.
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to calculate the expression (345 + 123) * 5 / 2. First, I will evaluate the addition inside the parentheses, then multiply the result by 5, and finally divide by 2. I can use the Calculator tool to perform this calculation in one step.
+
+[[ ## tool_name_0 ## ]]
+Calculator
+
+[[ ## tool_args_0 ## ]]
+{"expression": "(345 + 123) * 5 / 2"}
+
+[[ ## observation_0 ## ]]
+1170.0
+
+[[ ## thought_1 ## ]]
+I have calculated the expression and the result is 1170.0. Since I have all the information needed to complete the task, I will finish now.
+
+[[ ## tool_name_1 ## ]]
+finish
+
+[[ ## tool_args_1 ## ]]
+{}
+
+[[ ## observation_1 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+To solve the expression (345 + 123) * 5 / 2, I first add 345 and 123, which gives 468. Then, I multiply 468 by 5, resulting in 2340. Finally, I divide 2340 by 2, yielding 1170.0. 
+
+[[ ## answer ## ]]
+1170.0
+
+[[ ## completed ## ]]
+
+
+
+
+

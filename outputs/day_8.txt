@@ -1,0 +1,138 @@
+--- Day 8: Multi-Hop RAG ---
+
+--- Building a Multi-Hop RAG Program (Simplified Baleen) ---
+Question: Which award did Gary Zukav's first book receive?
+Final Context (first 3 passages):
+  [1] Gary Zukav | Gary Zukav (born October 17, 1942) is an American spiritual teacher and the author of four consecutive New York Times Best Sellers. Beginning in 1998, he appeared more than 30 times on "The Oprah Winfrey Show" to discuss transformation in human consciousness concepts presented in his book "The Seat of the Soul". His first book, "The Dancing Wu Li Masters" (1979), won a U.S. National Book Award.
+  [2] The Dancing Wu Li Masters | The Dancing Wu Li Masters is a 1979 book by Gary Zukav, a popular science work exploring modern physics, and quantum phenomena in particular. It was awarded a 1980 U.S. National Book Award in category of Science. Although it explores empirical topics in modern physics research, "The Dancing Wu Li Masters" gained attention for leveraging metaphors taken from eastern spiritual movements, in particular the Huayen school of Buddhism with the monk Fazang's treatise on The Golden Lion, to explain quantum phenomena and has been regarded by some reviewers as a New Age work, although the book is mostly concerned with the work of pioneers in western physics down through the ages.
+  [3] Zukiswa Wanner | Zukiswa Wanner (born 1976) is a South African journalist and novelist, born in Zambia and now based in Kenya. Since 2006, when she published her first book, her novels have been shortlisted for awards including the South African Literary Awards (SALA) and the Commonwealth Writers' Prize. In 2015 she won the K Sello Duiker Memorial Literary Award for "London Cape Town Joburg" (2014). In 2014 Wanner was named on the Africa39 list of 39 Sub-Saharan African writers aged under 40 with potential and talent to define trends in African literature.
+Answer: Gary Zukav's first book received the U.S. National Book Award.
+
+Question: Who acted in the short film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of 'Hamlet'?
+Final Context (first 3 passages):
+  [1] Kerry Condon | Kerry Condon (born 4 January 1983) is an Irish television and film actress, best known for her role as Octavia of the Julii in the HBO/BBC series "Rome," as Stacey Ehrmantraut in AMC's "Better Call Saul" and as the voice of F.R.I.D.A.Y. in various films in the Marvel Cinematic Universe. She is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of "Hamlet."
+  [2] Judi Dench filmography | Dame Judi Dench is an English actress who has worked in theater, television, and film. Dench made her professional debut in 1957 with the Old Vic Company. Over the following few years she played in several of Shakespeare's plays in such roles as Ophelia in "Hamlet", Juliet in "Romeo and Juliet" and Lady Macbeth in "Macbeth". She branched into film work, and won a BAFTA Award as Most Promising Newcomer; however, most of her work during this period was in theatre.
+  [3] Ophelia (upcoming film) | Ophelia is a 2018 upcoming British-American historical romantic drama film directed by Claire McCarthy and written by Semi Chellas, based on the character of same name by William Shakespeare and the novel by Lisa Klein. The film stars Daisy Ridley as the titular character, with Naomi Watts, Clive Owen, Tom Felton and George MacKay in supporting roles. The film follows the story of "Hamlet", as told by Ophelia's perspective.
+Answer: Kerry Condon
+
+--- Inspecting LM History (last 2 full multi-hop interactions) ---
+
+
+
+
+[2025-06-02T10:03:19.754132]
+
+System message:
+
+Your input fields are:
+1. `context` (str): previous context or notes
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `query` (str): search query for retrieval
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## query ## ]]
+{query}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Generate a simple search query that will help answer a complex question.
+
+
+User message:
+
+[[ ## context ## ]]
+Previous queries: Query 1: youngest actress Ophelia Royal Shakespeare Company The Shore short film cast
+
+Current context: ['Kerry Condon | Kerry Condon (born 4 January 1983) is an Irish television and film actress, best known for her role as Octavia of the Julii in the HBO/BBC series "Rome," as Stacey Ehrmantraut in AMC\'s "Better Call Saul" and as the voice of F.R.I.D.A.Y. in various films in the Marvel Cinematic Universe. She is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of "Hamlet."', 'Judi Dench filmography | Dame Judi Dench is an English actress who has worked in theater, television, and film. Dench made her professional debut in 1957 with the Old Vic Company. Over the following few years she played in several of Shakespeare\'s plays in such roles as Ophelia in "Hamlet", Juliet in "Romeo and Juliet" and Lady Macbeth in "Macbeth". She branched into film work, and won a BAFTA Award as Most Promising Newcomer; however, most of her work during this period was in theatre.', 'Ophelia (upcoming film) | Ophelia is a 2018 upcoming British-American historical romantic drama film directed by Claire McCarthy and written by Semi Chellas, based on the character of same name by William Shakespeare and the novel by Lisa Klein. The film stars Daisy Ridley as the titular character, with Naomi Watts, Clive Owen, Tom Felton and George MacKay in supporting roles. The film follows the story of "Hamlet", as told by Ophelia\'s perspective.']
+
+
+[[ ## question ## ]]
+Who acted in the short film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of 'Hamlet'?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## query ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The question asks for an actress who has two specific qualifications: she acted in the short film "The Shore" and is the youngest actress to play Ophelia in a Royal Shakespeare Company production of "Hamlet." From the context provided, it is noted that Kerry Condon is the youngest actress to play Ophelia in a Royal Shakespeare Company production. However, the context does not provide information about her involvement in "The Shore." Therefore, I need to search for the cast of "The Shore" to confirm if Kerry Condon is part of it or if there is another actress who meets both criteria.
+
+[[ ## query ## ]]
+The Shore short film cast
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:19.754478]
+
+System message:
+
+Your input fields are:
+1. `context` (str): final gathered context
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the question based on the provided context.
+
+
+User message:
+
+[[ ## context ## ]]
+[1] «Kerry Condon | Kerry Condon (born 4 January 1983) is an Irish television and film actress, best known for her role as Octavia of the Julii in the HBO/BBC series "Rome," as Stacey Ehrmantraut in AMC's "Better Call Saul" and as the voice of F.R.I.D.A.Y. in various films in the Marvel Cinematic Universe. She is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of "Hamlet."»
+[2] «Judi Dench filmography | Dame Judi Dench is an English actress who has worked in theater, television, and film. Dench made her professional debut in 1957 with the Old Vic Company. Over the following few years she played in several of Shakespeare's plays in such roles as Ophelia in "Hamlet", Juliet in "Romeo and Juliet" and Lady Macbeth in "Macbeth". She branched into film work, and won a BAFTA Award as Most Promising Newcomer; however, most of her work during this period was in theatre.»
+[3] «Ophelia (upcoming film) | Ophelia is a 2018 upcoming British-American historical romantic drama film directed by Claire McCarthy and written by Semi Chellas, based on the character of same name by William Shakespeare and the novel by Lisa Klein. The film stars Daisy Ridley as the titular character, with Naomi Watts, Clive Owen, Tom Felton and George MacKay in supporting roles. The film follows the story of "Hamlet", as told by Ophelia's perspective.»
+[4] «Maggie Cronin | The Short film The Shore directed by Terry George, in which she appears with Ciarán Hinds, Conleth Hill and Kerry Condon, won the Academy award in the Short Film, Live Action category at 84th Academy Awards in February 2012.»
+[5] «The Shore (film) | The Shore is a Northern Irish short film directed by Terry George. The film won the 2012 Academy Award for Best Live Action Short Film. It was filmed entirely at George's family cottage at Coney Island near Ardglass, County Down, Northern Ireland.»
+[6] «Shore Leave (film) | Shore Leave is a 1925 American silent comedy film directed by John S. Robertson and starring Richard Barthelmess and Dorothy Mackaill. It was produced by Barthelmess's production company, Inspiration, and released by First National Pictures. A print of the film survives.»
+
+[[ ## question ## ]]
+Who acted in the short film The Shore and is also the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of 'Hamlet'?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+Kerry Condon is mentioned in the context as having acted in the short film "The Shore" and is also noted as the youngest actress ever to play Ophelia in a Royal Shakespeare Company production of "Hamlet." Therefore, she is the answer to the question.
+
+[[ ## answer ## ]]
+Kerry Condon
+
+[[ ## completed ## ]]
+
+
+
+
+

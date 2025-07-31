@@ -1,0 +1,176 @@
+--- Day 5: Information Extraction to Pydantic---
+
+--- Using dspy.Predict for Information Extraction ---
+Original Text:
+
+Apple Inc. announced its latest iPhone 16 today at the annual WWDC conference.
+The CEO, Tim Cook, highlighted its revolutionary new features, including an
+AI-powered camera and a titanium frame, in a press release. The event took place
+in Cupertino, California.
+
+
+Extracted Title: Apple Inc. Announces iPhone 16 at WWDC
+Extracted Headings: ['Introduction', 'Announcement Details', 'Features Highlighted', 'Event Location']
+Extracted Entities: [Entity(name='Apple Inc.', entity_type='Organization'), Entity(name='iPhone 16', entity_type='Product'), Entity(name='Tim Cook', entity_type='Person'), Entity(name='WWDC', entity_type='Event'), Entity(name='Cupertino, California', entity_type='Location')]
+
+Original Text:
+
+The highly anticipated sequel, 'Dune: Part Two', starring Timothée Chalamet and Zendaya,
+was released on March 1, 2024. Directed by Denis Villeneuve, the film grossed over
+$711 million worldwide.
+
+
+Extracted Title: Dune: Part Two Release
+Extracted Headings: ['Release Date', 'Cast', 'Director', 'Box Office Performance']
+Extracted Entities: [Entity(name='Dune: Part Two', entity_type='Film'), Entity(name='Timothée Chalamet', entity_type='Actor'), Entity(name='Zendaya', entity_type='Actor'), Entity(name='Denis Villeneuve', entity_type='Director')]
+
+--- Inspecting LM History (last 2 calls) ---
+
+
+
+
+[2025-06-02T10:03:17.058031]
+
+System message:
+
+Your input fields are:
+1. `text` (str)
+Your output fields are:
+1. `article_info` (ArticleInfo): The main title of the content
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## text ## ]]
+{text}
+
+[[ ## article_info ## ]]
+{article_info}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "$defs": {"Entity": {"type": "object", "properties": {"entity_type": {"type": "string", "title": "Entity Type"}, "name": {"type": "string", "title": "Name"}}, "required": ["name", "entity_type"], "title": "Entity"}}, "properties": {"entities": {"type": "array", "items": {"$ref": "#/$defs/Entity"}, "title": "Entities"}, "headings": {"type": "array", "items": {"type": "string"}, "title": "Headings"}, "title": {"type": "string", "title": "Title"}}, "required": ["title", "headings", "entities"], "title": "ArticleInfo"}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Extract structured information from a given text, including title, headings, and entities.
+
+
+User message:
+
+[[ ## text ## ]]
+
+Apple Inc. announced its latest iPhone 16 today at the annual WWDC conference.
+The CEO, Tim Cook, highlighted its revolutionary new features, including an
+AI-powered camera and a titanium frame, in a press release. The event took place
+in Cupertino, California.
+
+
+Respond with the corresponding output fields, starting with the field `[[ ## article_info ## ]]` (must be formatted as a valid Python ArticleInfo), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## article_info ## ]]
+{
+  "title": "Apple Inc. Announces iPhone 16 at WWDC",
+  "headings": [
+    "Introduction",
+    "Announcement Details",
+    "Features Highlighted",
+    "Event Location"
+  ],
+  "entities": [
+    {
+      "name": "Apple Inc.",
+      "entity_type": "Organization"
+    },
+    {
+      "name": "iPhone 16",
+      "entity_type": "Product"
+    },
+    {
+      "name": "Tim Cook",
+      "entity_type": "Person"
+    },
+    {
+      "name": "WWDC",
+      "entity_type": "Event"
+    },
+    {
+      "name": "Cupertino, California",
+      "entity_type": "Location"
+    }
+  ]
+}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:17.058585]
+
+System message:
+
+Your input fields are:
+1. `text` (str)
+Your output fields are:
+1. `article_info` (ArticleInfo): The main title of the content
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## text ## ]]
+{text}
+
+[[ ## article_info ## ]]
+{article_info}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "$defs": {"Entity": {"type": "object", "properties": {"entity_type": {"type": "string", "title": "Entity Type"}, "name": {"type": "string", "title": "Name"}}, "required": ["name", "entity_type"], "title": "Entity"}}, "properties": {"entities": {"type": "array", "items": {"$ref": "#/$defs/Entity"}, "title": "Entities"}, "headings": {"type": "array", "items": {"type": "string"}, "title": "Headings"}, "title": {"type": "string", "title": "Title"}}, "required": ["title", "headings", "entities"], "title": "ArticleInfo"}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Extract structured information from a given text, including title, headings, and entities.
+
+
+User message:
+
+[[ ## text ## ]]
+
+The highly anticipated sequel, 'Dune: Part Two', starring Timothée Chalamet and Zendaya,
+was released on March 1, 2024. Directed by Denis Villeneuve, the film grossed over
+$711 million worldwide.
+
+
+Respond with the corresponding output fields, starting with the field `[[ ## article_info ## ]]` (must be formatted as a valid Python ArticleInfo), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## article_info ## ]]
+{
+  "title": "Dune: Part Two Release",
+  "headings": [
+    "Release Date",
+    "Cast",
+    "Director",
+    "Box Office Performance"
+  ],
+  "entities": [
+    {
+      "name": "Dune: Part Two",
+      "entity_type": "Film"
+    },
+    {
+      "name": "Timothée Chalamet",
+      "entity_type": "Actor"
+    },
+    {
+      "name": "Zendaya",
+      "entity_type": "Actor"
+    },
+    {
+      "name": "Denis Villeneuve",
+      "entity_type": "Director"
+    }
+  ]
+}
+
+[[ ## completed ## ]]
+
+
+
+
+

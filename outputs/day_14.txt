@@ -1,0 +1,116 @@
+--- Day 14: Conversational Assistant with History ---
+
+--- Building a Stateful Conversational Assistant ---
+
+--- Conversation Simulation ---
+User: Hi there, my name is Bill! What can you do?
+Assistant: Hi Bill! I'm here to help you with a variety of tasks. I can answer questions, provide information on a wide range of topics, assist with problem-solving, and even engage in casual conversation. If there's something specific you need help with, just let me know!
+
+User: What is my name?
+Assistant: Your name is Bill!
+
+--- Inspecting LM History (last 3 calls) ---
+
+
+
+
+[2025-06-16T20:18:18.552145]
+
+System message:
+
+Your input fields are:
+1. `history` (History): Previous turns of the conversation as a History object
+2. `user_message` (str)
+Your output fields are:
+1. `assistant_response` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## history ## ]]
+{history}
+
+[[ ## user_message ## ]]
+{user_message}
+
+[[ ## assistant_response ## ]]
+{assistant_response}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Engage in a helpful conversation, using previous conversation history.
+
+
+User message:
+
+[[ ## user_message ## ]]
+Hi there, my name is Bill! What can you do?
+
+Respond with the corresponding output fields, starting with the field `[[ ## assistant_response ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## assistant_response ## ]]
+Hi Bill! I'm here to help you with a variety of tasks. I can answer questions, provide information on a wide range of topics, assist with problem-solving, and even engage in casual conversation. If there's something specific you need help with, just let me know!
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-16T20:18:18.552644]
+
+System message:
+
+Your input fields are:
+1. `history` (History): Previous turns of the conversation as a History object
+2. `user_message` (str)
+Your output fields are:
+1. `assistant_response` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## history ## ]]
+{history}
+
+[[ ## user_message ## ]]
+{user_message}
+
+[[ ## assistant_response ## ]]
+{assistant_response}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Engage in a helpful conversation, using previous conversation history.
+
+
+User message:
+
+[[ ## user_message ## ]]
+Hi there, my name is Bill! What can you do?
+
+
+Assistant message:
+
+[[ ## assistant_response ## ]]
+Hi Bill! I'm here to help you with a variety of tasks. I can answer questions, provide information on a wide range of topics, assist with problem-solving, and even engage in casual conversation. If there's something specific you need help with, just let me know!
+
+
+User message:
+
+[[ ## user_message ## ]]
+What is my name?
+
+Respond with the corresponding output fields, starting with the field `[[ ## assistant_response ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## assistant_response ## ]]
+Your name is Bill! 
+
+[[ ## completed ## ]]
+
+
+
+
+

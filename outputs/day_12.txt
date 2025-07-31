@@ -1,0 +1,177 @@
+--- Day 12: Search Agent ---
+
+--- Building a dspy.ReAct Agent with a Search Tool ---
+Question: Which baseball team does Shohei Ohtani play for?
+Agent's Answer: Shohei Ohtani currently plays for the Los Angeles Angels in Major League Baseball (MLB).
+
+Question: What year was the Golden Gate Bridge completed?
+Agent's Answer: The Golden Gate Bridge was completed in 1937.
+
+--- Inspecting LM History (last 2 ReAct trajectories) ---
+
+
+
+
+[2025-06-02T10:03:05.749027]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `next_thought` (str)
+2. `next_tool_name` (Literal['WikipediaSearch', 'finish'])
+3. `next_tool_args` (dict[str, Any])
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## next_thought ## ]]
+{next_thought}
+
+[[ ## next_tool_name ## ]]
+{next_tool_name}        # note: the value you produce must exactly match (no extra characters) one of: WikipediaSearch; finish
+
+[[ ## next_tool_args ## ]]
+{next_tool_args}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "additionalProperties": true}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer factual questions accurately.
+        
+        You are an Agent. In each episode, you will be given the fields `question` as input. And you can see your past trajectory so far.
+        Your goal is to use one or more of the supplied tools to collect any necessary information for producing `answer`.
+        
+        To do this, you will interleave next_thought, next_tool_name, and next_tool_args in each turn, and also when finishing the task.
+        After each tool call, you receive a resulting observation, which gets appended to your trajectory.
+        
+        When writing next_thought, you may reason about the current situation and plan for future steps.
+        When selecting the next_tool_name and its next_tool_args, the tool must be one of:
+        
+        (1) WikipediaSearch, whose description is <desc>A tool for searching Wikipedia for factual information.</desc>. It takes arguments {'query': {'type': 'string'}} in JSON format.
+        (2) finish, whose description is <desc>Marks the task as complete. That is, signals that all information for producing the outputs, i.e. `answer`, are now available to be extracted.</desc>. It takes arguments {} in JSON format.
+
+
+User message:
+
+[[ ## question ## ]]
+What year was the Golden Gate Bridge completed?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to find the completion year of the Golden Gate Bridge. This is a historical fact that should be available on Wikipedia, so I will search for it there.
+
+[[ ## tool_name_0 ## ]]
+WikipediaSearch
+
+[[ ## tool_args_0 ## ]]
+{"query": "Golden Gate Bridge completion year"}
+
+[[ ## observation_0 ## ]]
+[1] «Golden Gate International Exposition | The Golden Gate International Exposition (GGIE) (1939 and 1940), held at San Francisco's Treasure Island, was a World's Fair celebrating, among other things, the city's two newly built bridges. The San Francisco–Oakland Bay Bridge opened in 1936 and the Golden Gate Bridge in 1937. The exposition opened from February 18, 1939, through October 29, 1939, and from May 25, 1940, through September 29, 1940.»
+[2] «The Bridge (2006 documentary film) | The Bridge is a 2006 British-American documentary film by Eric Steel spanning one year of filming at the famed Golden Gate Bridge which crosses the Golden Gate entrance to San Francisco Bay, connecting the city of San Francisco, California to the Marin Headlands of Marin County, in 2004. The film captured a number of suicides, and featured interviews with family and friends of some of the identified people who had thrown themselves from the bridge that year.»
+[3] «Bridge Round House | The Bridge Round House is a diner located at the southeastern end of the Golden Gate Bridge, adjacent to the tourist plaza which was renovated in 2012. The Bridge Round House, an Art Deco design by Alfred Finnila completed in 1938, has been popular throughout the years as a starting point for various commercial tours of the bridge and an unofficial gift shop. The diner was renovated in 2012 and the gift shop was then removed as a new, official gift shop has been included in the adjacent plaza renovations.»
+
+Respond with the corresponding output fields, starting with the field `[[ ## next_thought ## ]]`, then `[[ ## next_tool_name ## ]]` (must be formatted as a valid Python Literal['WikipediaSearch', 'finish']), then `[[ ## next_tool_args ## ]]` (must be formatted as a valid Python dict[str, Any]), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## next_thought ## ]]
+I found that the Golden Gate Bridge was completed in 1937. I can now finalize my response since I have the necessary information.
+
+[[ ## next_tool_name ## ]]
+finish
+
+[[ ## next_tool_args ## ]]
+{}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:05.750203]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer factual questions accurately.
+
+
+User message:
+
+[[ ## question ## ]]
+What year was the Golden Gate Bridge completed?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to find the completion year of the Golden Gate Bridge. This is a historical fact that should be available on Wikipedia, so I will search for it there.
+
+[[ ## tool_name_0 ## ]]
+WikipediaSearch
+
+[[ ## tool_args_0 ## ]]
+{"query": "Golden Gate Bridge completion year"}
+
+[[ ## observation_0 ## ]]
+[1] «Golden Gate International Exposition | The Golden Gate International Exposition (GGIE) (1939 and 1940), held at San Francisco's Treasure Island, was a World's Fair celebrating, among other things, the city's two newly built bridges. The San Francisco–Oakland Bay Bridge opened in 1936 and the Golden Gate Bridge in 1937. The exposition opened from February 18, 1939, through October 29, 1939, and from May 25, 1940, through September 29, 1940.»
+[2] «The Bridge (2006 documentary film) | The Bridge is a 2006 British-American documentary film by Eric Steel spanning one year of filming at the famed Golden Gate Bridge which crosses the Golden Gate entrance to San Francisco Bay, connecting the city of San Francisco, California to the Marin Headlands of Marin County, in 2004. The film captured a number of suicides, and featured interviews with family and friends of some of the identified people who had thrown themselves from the bridge that year.»
+[3] «Bridge Round House | The Bridge Round House is a diner located at the southeastern end of the Golden Gate Bridge, adjacent to the tourist plaza which was renovated in 2012. The Bridge Round House, an Art Deco design by Alfred Finnila completed in 1938, has been popular throughout the years as a starting point for various commercial tours of the bridge and an unofficial gift shop. The diner was renovated in 2012 and the gift shop was then removed as a new, official gift shop has been included in the adjacent plaza renovations.»
+
+[[ ## thought_1 ## ]]
+I found that the Golden Gate Bridge was completed in 1937. I can now finalize my response since I have the necessary information.
+
+[[ ## tool_name_1 ## ]]
+finish
+
+[[ ## tool_args_1 ## ]]
+{}
+
+[[ ## observation_1 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The Golden Gate Bridge was completed in 1937, as confirmed by the information retrieved from the search. This is a well-documented historical fact.
+
+[[ ## answer ## ]]
+The Golden Gate Bridge was completed in 1937.
+
+[[ ## completed ## ]]
+
+
+
+
+

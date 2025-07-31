@@ -1,0 +1,134 @@
+--- Day 6: Basic RAG ---
+
+--- Building a Basic RAG Program ---
+Question: When was the first FIFA World Cup held?
+Retrieved Context (first 2 passages):
+  [1] History of the FIFA World Cup | The FIFA World Cup was first held in 1930, when FIFA president Jules Rimet decided to stage an international football tournament. The inaugural edition, held in 1930, was contested as a final tournament of only thirteen teams invited by the organization. Since then, the World Cup has experienced successive expansions and format remodeling to its current 32-team final tournament preceded by a two-year qualifying process, involving over 200 teams from around the world.
+  [2] 1950 FIFA World Cup | The 1950 FIFA World Cup, held in Brazil from 24 June to 16 July 1950, was the fourth FIFA World Cup. It was the first World Cup since 1938, the planned 1942 and 1946 competitions having been cancelled owing to World War II. It was won by Uruguay, who had won the inaugural competition in 1930, clinching the cup by beating the hosts Brazil 2–1 in the deciding match of the four-team final group (this was the only tournament not decided by a one-match final). It was also the first tournament where the trophy was referred to as the Jules Rimet Cup, to mark the 25th anniversary of Jules Rimet's presidency of FIFA.
+Reasoning: The context states that the FIFA World Cup was first held in 1930, as decided by FIFA president Jules Rimet. This information is clearly outlined in the first passage of the provided context.
+Answer: The first FIFA World Cup was held in 1930.
+
+Question: What is the capital of Portugal?
+Retrieved Context (first 2 passages):
+  [1] Lisbon (disambiguation) | Lisbon is the capital city of Portugal.
+  [2] Lisboa (disambiguation) | Lisboa is the capital city of Portugal.
+Reasoning: The context clearly states that Lisbon is the capital city of Portugal. It is mentioned multiple times in the provided passages, confirming its status as the capital.
+Answer: The capital of Portugal is Lisbon.
+
+--- Inspecting LM History (last 2 full interactions including retrieval) ---
+
+
+
+
+[2025-06-02T10:03:17.912368]
+
+System message:
+
+Your input fields are:
+1. `context` (str): relevant passages from a knowledge base
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions based on the provided context.
+
+
+User message:
+
+[[ ## context ## ]]
+[1] «History of the FIFA World Cup | The FIFA World Cup was first held in 1930, when FIFA president Jules Rimet decided to stage an international football tournament. The inaugural edition, held in 1930, was contested as a final tournament of only thirteen teams invited by the organization. Since then, the World Cup has experienced successive expansions and format remodeling to its current 32-team final tournament preceded by a two-year qualifying process, involving over 200 teams from around the world.»
+[2] «1950 FIFA World Cup | The 1950 FIFA World Cup, held in Brazil from 24 June to 16 July 1950, was the fourth FIFA World Cup. It was the first World Cup since 1938, the planned 1942 and 1946 competitions having been cancelled owing to World War II. It was won by Uruguay, who had won the inaugural competition in 1930, clinching the cup by beating the hosts Brazil 2–1 in the deciding match of the four-team final group (this was the only tournament not decided by a one-match final). It was also the first tournament where the trophy was referred to as the Jules Rimet Cup, to mark the 25th anniversary of Jules Rimet's presidency of FIFA.»
+[3] «1970 FIFA World Cup | The 1970 FIFA World Cup was the ninth FIFA World Cup, the quadrennial international football championship for men's national teams. Held from 31 May to 21 June in Mexico, it was the first World Cup tournament staged in North America, and the first held outside Europe and South America. Teams representing 75 nations from all six populated continents entered the competition, and its qualification rounds began in May 1968. Fourteen teams qualified from this process to join host nation Mexico and defending champions England in the sixteen-team final tournament. El Salvador, Israel, and Morocco made their first appearances at the final stage, and Peru their first since 1930.»
+
+[[ ## question ## ]]
+When was the first FIFA World Cup held?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The context states that the FIFA World Cup was first held in 1930, as decided by FIFA president Jules Rimet. This information is clearly outlined in the first passage of the provided context.
+
+[[ ## answer ## ]]
+The first FIFA World Cup was held in 1930.
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:17.912760]
+
+System message:
+
+Your input fields are:
+1. `context` (str): relevant passages from a knowledge base
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions based on the provided context.
+
+
+User message:
+
+[[ ## context ## ]]
+[1] «Lisbon (disambiguation) | Lisbon is the capital city of Portugal.»
+[2] «Lisboa (disambiguation) | Lisboa is the capital city of Portugal.»
+[3] «Lisbon | Lisbon ( ; Portuguese: "Lisboa" , ] ) is the capital and the largest city of Portugal, with a population of 552,700 within its administrative limits in an area of 100.05 km. Its urban area extends beyond the city's administrative limits with a population of around 3 million people, being the 11th-most populous urban area in the European Union. About 3 million people live in the Lisbon Metropolitan Area (which represents approximately 27% of the country's population). It is continental Europe's westernmost capital city and the only one along the Atlantic coast. Lisbon lies in the western Iberian Peninsula on the Atlantic Ocean and the River Tagus. The westernmost areas of its metro area is the westernmost point of Continental Europe.»
+
+[[ ## question ## ]]
+What is the capital of Portugal?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The context clearly states that Lisbon is the capital city of Portugal. It is mentioned multiple times in the provided passages, confirming its status as the capital. 
+
+[[ ## answer ## ]]
+The capital of Portugal is Lisbon.
+
+[[ ## completed ## ]]
+
+
+
+
+

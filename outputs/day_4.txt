@@ -1,0 +1,208 @@
+--- Day 4: Sentiment Classifier ---
+
+--- Using dspy.Predict for Sentiment Classification ---
+Sentence: 'This movie was absolutely brilliant and captivating from start to finish!'
+Sentiment: positive, Confidence: 0.95
+
+Sentence: 'The food was okay, but the service was incredibly slow.'
+Sentiment: neutral, Confidence: 0.65
+
+Sentence: 'I have no strong feelings about this.'
+Sentiment: neutral, Confidence: 0.85
+
+Sentence: 'This book was super fun to read, though not the last chapter.'
+Sentiment: positive, Confidence: 0.75
+
+--- Inspecting LM History (last 4 calls) ---
+
+
+
+
+[2025-06-02T10:03:16.210060]
+
+System message:
+
+Your input fields are:
+1. `sentence` (str)
+Your output fields are:
+1. `sentiment` (Literal['positive', 'negative', 'neutral'])
+2. `confidence` (float)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## sentence ## ]]
+{sentence}
+
+[[ ## sentiment ## ]]
+{sentiment}        # note: the value you produce must exactly match (no extra characters) one of: positive; negative; neutral
+
+[[ ## confidence ## ]]
+{confidence}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `sentence`, produce the fields `sentiment`, `confidence`.
+
+
+User message:
+
+[[ ## sentence ## ]]
+This movie was absolutely brilliant and captivating from start to finish!
+
+Respond with the corresponding output fields, starting with the field `[[ ## sentiment ## ]]` (must be formatted as a valid Python Literal['positive', 'negative', 'neutral']), then `[[ ## confidence ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## sentiment ## ]]
+positive
+
+[[ ## confidence ## ]]
+0.95
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:16.210429]
+
+System message:
+
+Your input fields are:
+1. `sentence` (str)
+Your output fields are:
+1. `sentiment` (Literal['positive', 'negative', 'neutral'])
+2. `confidence` (float)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## sentence ## ]]
+{sentence}
+
+[[ ## sentiment ## ]]
+{sentiment}        # note: the value you produce must exactly match (no extra characters) one of: positive; negative; neutral
+
+[[ ## confidence ## ]]
+{confidence}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `sentence`, produce the fields `sentiment`, `confidence`.
+
+
+User message:
+
+[[ ## sentence ## ]]
+The food was okay, but the service was incredibly slow.
+
+Respond with the corresponding output fields, starting with the field `[[ ## sentiment ## ]]` (must be formatted as a valid Python Literal['positive', 'negative', 'neutral']), then `[[ ## confidence ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## sentiment ## ]]
+neutral
+
+[[ ## confidence ## ]]
+0.65
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:16.210679]
+
+System message:
+
+Your input fields are:
+1. `sentence` (str)
+Your output fields are:
+1. `sentiment` (Literal['positive', 'negative', 'neutral'])
+2. `confidence` (float)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## sentence ## ]]
+{sentence}
+
+[[ ## sentiment ## ]]
+{sentiment}        # note: the value you produce must exactly match (no extra characters) one of: positive; negative; neutral
+
+[[ ## confidence ## ]]
+{confidence}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `sentence`, produce the fields `sentiment`, `confidence`.
+
+
+User message:
+
+[[ ## sentence ## ]]
+I have no strong feelings about this.
+
+Respond with the corresponding output fields, starting with the field `[[ ## sentiment ## ]]` (must be formatted as a valid Python Literal['positive', 'negative', 'neutral']), then `[[ ## confidence ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## sentiment ## ]]
+neutral
+
+[[ ## confidence ## ]]
+0.85
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:16.211104]
+
+System message:
+
+Your input fields are:
+1. `sentence` (str)
+Your output fields are:
+1. `sentiment` (Literal['positive', 'negative', 'neutral'])
+2. `confidence` (float)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## sentence ## ]]
+{sentence}
+
+[[ ## sentiment ## ]]
+{sentiment}        # note: the value you produce must exactly match (no extra characters) one of: positive; negative; neutral
+
+[[ ## confidence ## ]]
+{confidence}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `sentence`, produce the fields `sentiment`, `confidence`.
+
+
+User message:
+
+[[ ## sentence ## ]]
+This book was super fun to read, though not the last chapter.
+
+Respond with the corresponding output fields, starting with the field `[[ ## sentiment ## ]]` (must be formatted as a valid Python Literal['positive', 'negative', 'neutral']), then `[[ ## confidence ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## sentiment ## ]]
+positive
+
+[[ ## confidence ## ]]
+0.75
+
+[[ ## completed ## ]]
+
+
+
+
+

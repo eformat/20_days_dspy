@@ -1,0 +1,111 @@
+--- Day 18: Instruction Optimization ---
+
+--- Step 1: Define a Metric for Paraphrasing ---
+Metric function defined: paraphrase_metric
+
+--- Step 2: Evaluate Baseline Paraphrase Program ---
+Evaluating baseline paraphrase program...
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 525.27it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 1018.90it/s]
+                                            sentence  \
+0  In the event that you are unable to attend, pl...   
+1  He possesses a profound understanding of the s...   
+
+        example_paraphrased_sentence  \
+0  If you can't attend, let us know.   
+1   He understands the subject well.   
+
+                     pred_paraphrased_sentence paraphrase_metric  
+0       Please inform us if you cannot attend.        ✔️ [1.000]  
+1  He has a deep understanding of the subject.        ✔️ [1.000]  
+Baseline Paraphrase Program Score: 100.0
+
+--- Step 3: Optimize with MIPROv2 (Instruction Optimization) ---
+Compiling paraphrase program with MIPROv2 (Instruction Optimization)...
+Bootstrapping set 1/6
+Bootstrapping set 2/6
+Bootstrapped 1 full traces after 0 examples for up to 1 rounds, amounting to 1 attempts.
+Bootstrapping set 3/6
+Bootstrapped 1 full traces after 0 examples for up to 1 rounds, amounting to 1 attempts.
+Bootstrapping set 4/6
+Bootstrapped 1 full traces after 0 examples for up to 1 rounds, amounting to 1 attempts.
+Bootstrapping set 5/6
+Bootstrapped 1 full traces after 0 examples for up to 1 rounds, amounting to 1 attempts.
+Bootstrapping set 6/6
+Bootstrapped 1 full traces after 0 examples for up to 1 rounds, amounting to 1 attempts.
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 591.66it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 1137.59it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 554.36it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 1087.03it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 343.04it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 677.76it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 27060.03it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 29433.71it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 674.87it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 1314.21it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 893.55it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 1718.27it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 2174.34it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 4017.53it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 2123.70it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 3867.50it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 1265.63it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 2439.26it/s]
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 2319.86it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 4273.36it/s]
+
+--- Step 4: Evaluate Optimized Paraphrase Program ---
+Evaluating optimized paraphrase program...
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 2299.51it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 4256.02it/s]
+                                            sentence  \
+0  In the event that you are unable to attend, pl...   
+1  He possesses a profound understanding of the s...   
+
+        example_paraphrased_sentence  \
+0  If you can't attend, let us know.   
+1   He understands the subject well.   
+
+                     pred_paraphrased_sentence paraphrase_metric  
+0       Please inform us if you cannot attend.        ✔️ [1.000]  
+1  He has a deep understanding of the subject.        ✔️ [1.000]  
+Optimized Paraphrase Program Score: 100.0
+
+Optimized Paraphrase program (MIPROv2) saved to optimized_paraphrase_mipro.json
+
+Original: The individual who is responsible for the overall management of the project is currently out of the office.
+Optimized Paraphrase: The project manager is currently out of the office.
+
+--- Inspecting Optimized Program's History (last call with new instruction) ---
+
+
+
+
+[2025-06-02T10:03:11.836832]
+
+System message:
+
+Your input fields are:
+1. `sentence` (str)
+Your output fields are:
+1. `paraphrased_sentence` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## sentence ## ]]
+{sentence}
+
+[[ ## paraphrased_sentence ## ]]
+{paraphrased_sentence}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Paraphrase the given sentence to be more concise.
+
+
+User message:
+
+[[ ## sentence ## ]]
+The individual who is responsible for the overall management of the project is currently out of the office.
+
+Respond with the corresponding output fields, starting with the field `[[ ## paraphrased_sentence ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## paraphrased_sentence ## ]]
+The project manager is currently out of the office.
+
+[[ ## completed ## ]]
+
+
+
+
+

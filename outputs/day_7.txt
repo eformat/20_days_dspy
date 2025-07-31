@@ -1,0 +1,134 @@
+--- Day 7: Multi-Document RAG ---
+
+--- Building a Multi-Document RAG Program ---
+Question: Describe the life and major scientific contributions of Marie Curie.
+Number of Retrieved Passages: 5
+Reasoning: Marie Curie, born Maria Salomea Skłodowska on November 7, 1867, was a pioneering physicist and chemist known for her groundbreaking research on radioactivity. She was the first woman to win a Nobel Prize and remains the only person to have won Nobel Prizes in two different scientific fields—Physics in 1903 and Chemistry in 1911. Her significant contributions include the discovery of the elements polonium and radium, which were crucial in the study of radioactivity. Curie's work laid the foundation for advancements in medical treatments and nuclear physics. She also authored the "Treatise on Radioactivity," a comprehensive survey of the subject published in 1910, which further solidified her legacy in the scientific community. Additionally, she was the first woman to become a professor at the University of Paris and was honored posthumously by being entombed in the Panthéon in Paris for her contributions to science.
+Answer: Marie Curie was a pioneering physicist and chemist born on November 7, 1867, in Poland. She conducted groundbreaking research on radioactivity, discovering the elements polonium and radium. Curie was the first woman to win a Nobel Prize and remains the only person to win Nobel Prizes in two different scientific fields—Physics in 1903 and Chemistry in 1911. She authored the "Treatise on Radioactivity" in 1910, which became a classic in the field. Curie was also the first woman to become a professor at the University of Paris and was entombed in the Panthéon in Paris for her significant contributions to science.
+
+Question: What are the main causes and effects of climate change?
+Number of Retrieved Passages: 5
+Reasoning: The main causes of climate change include both natural and human-induced factors. Natural factors consist of biotic processes, variations in solar radiation, plate tectonics, and volcanic eruptions. However, the primary drivers of ongoing climate change, often referred to as "global warming," are human activities, particularly the emissions of greenhouse gases from burning fossil fuels. The effects of climate change are significant and include environmental and social changes such as glacier retreat, altered seasonal events, and impacts on agricultural productivity. Additionally, climate change poses serious hazards to human health, leading to extreme weather events, loss of biodiversity, and increased spread of infectious diseases.
+Answer: The main causes of climate change are natural factors like biotic processes, solar radiation variations, plate tectonics, and volcanic eruptions, but primarily human activities that emit greenhouse gases. The effects include glacier retreat, changes in seasonal events, impacts on agriculture, and serious health hazards such as extreme weather, loss of biodiversity, and the spread of infectious diseases.
+
+--- Inspecting LM History (last 2 full interactions) ---
+
+
+
+
+[2025-06-02T10:03:18.820830]
+
+System message:
+
+Your input fields are:
+1. `context` (str): relevant passages from a knowledge base
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions based on the provided context.
+
+
+User message:
+
+[[ ## context ## ]]
+[1] «Marie Curie | Marie Skłodowska Curie ( ; ] ; ] ; 7 November 18674 July 1934; born Maria Salomea Skłodowska; ] ) was a Polish and naturalized-French physicist and chemist who conducted pioneering research on radioactivity. She was the first woman to win a Nobel Prize, the first person and only woman to win twice, the only person to win a Nobel Prize in two different sciences, and was part of the Curie family legacy of five Nobel Prizes. She was also the first woman to become a professor at the University of Paris, and in 1995 became the first woman to be entombed on her own merits in the Panthéon in Paris.»
+[2] «Treatise on Radioactivity | Treatise on Radioactivity (French: "Traité de Radioactivité" ) is a two-volume book from the year 1910 written by the Polish scientist Marie Curie as a survey on the subject of radioactivity. She was awarded her second Nobel Prize in the following year after the publication of the book. The book, which was dedicated to her newly deceased collaborator and husband Pierre Curie, has been described as "a classic synthesis of current research on radioactivity by scientists of the early 20th century." It was published by the Paris publisher Gauthier-Villars.»
+[3] «Pierre Curie | Pierre Curie ( ; ] ; 15 May 1859 – 19 April 1906) was a French physicist, a pioneer in crystallography, magnetism, piezoelectricity and radioactivity. In 1903 he received the Nobel Prize in Physics with his wife, Marie Skłodowska-Curie, and Henri Becquerel, "in recognition of the extraordinary services they have rendered by their joint researches on the radiation phenomena discovered by Professor Henri Becquerel".»
+[4] «Marie Curie (disambiguation) | Marie Skłodowska-Curie (1867–1934, born Marie Skłodowska) was a Franco-Polish chemist and physicist»
+[5] «The Radium Woman | The Radium Woman: A youth edition of the life of Madame Curie is a biography of the scientist Marie Curie adapted for children by Eleanor Doorly from the 1937 biography by Ève Curie. It was published by Heinemann in 1939 with woodcuts by Robert Gibbings as chapter headings.»
+
+[[ ## question ## ]]
+Describe the life and major scientific contributions of Marie Curie.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+Marie Curie, born Maria Salomea Skłodowska on November 7, 1867, was a pioneering physicist and chemist known for her groundbreaking research on radioactivity. She was the first woman to win a Nobel Prize and remains the only person to have won Nobel Prizes in two different scientific fields—Physics in 1903 and Chemistry in 1911. Her significant contributions include the discovery of the elements polonium and radium, which were crucial in the study of radioactivity. Curie's work laid the foundation for advancements in medical treatments and nuclear physics. She also authored the "Treatise on Radioactivity," a comprehensive survey of the subject published in 1910, which further solidified her legacy in the scientific community. Additionally, she was the first woman to become a professor at the University of Paris and was honored posthumously by being entombed in the Panthéon in Paris for her contributions to science.
+
+[[ ## answer ## ]]
+Marie Curie was a pioneering physicist and chemist born on November 7, 1867, in Poland. She conducted groundbreaking research on radioactivity, discovering the elements polonium and radium. Curie was the first woman to win a Nobel Prize and remains the only person to win Nobel Prizes in two different scientific fields—Physics in 1903 and Chemistry in 1911. She authored the "Treatise on Radioactivity" in 1910, which became a classic in the field. Curie was also the first woman to become a professor at the University of Paris and was entombed in the Panthéon in Paris for her significant contributions to science. 
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:18.821204]
+
+System message:
+
+Your input fields are:
+1. `context` (str): relevant passages from a knowledge base
+2. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## context ## ]]
+{context}
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions based on the provided context.
+
+
+User message:
+
+[[ ## context ## ]]
+[1] «Climate change | Climate change is a change in the statistical distribution of weather patterns when that change lasts for an extended period of time (i.e., decades to millions of years). Climate change may refer to a change in average weather conditions, or in the time variation of weather within the context of longer-term average conditions. Climate change is caused by factors such as biotic processes, variations in solar radiation received by Earth, plate tectonics, and volcanic eruptions. Certain human activities have been identified as primary causes of ongoing climate change, often referred to as "global warming".»
+[2] «Effects of global warming | The effects of global warming are the environmental and social changes caused (directly or indirectly) by human emissions of greenhouse gases. There is a scientific consensus that climate change is occurring, and that human activities are the primary driver. Many impacts of climate change have already been observed, including glacier retreat, changes in the timing of seasonal events (e.g., earlier flowering of plants), and changes in agricultural productivity.»
+[3] «Effects of global warming on humans | Climate change has brought about possibly permanent alterations to Earth's geological, biological and ecological systems. These changes have led to the emergence of large-scale environmental hazards to human health, such as extreme weather, ozone depletion, increased danger of wildland fires, loss of biodiversity, stresses to food-producing systems and the global spread of infectious diseases. The World Health Organization (WHO) estimates that 160,000 deaths, since 1950, are directly attributable to climate change.»
+[4] «Scientific opinion on climate change | The scientific opinion on climate change is the overall judgment among scientists regarding the extent to which global warming is occurring, its likely causes, and its probable consequences. The scientific consensus is that the Earth's climate system is unequivocally warming, and that it is "extremely likely" (meaning 95% probability or higher) that this warming is predominantly caused by humans. It is likely that this mainly arises from increased concentrations of greenhouse gases in the atmosphere, primarily from the burning of fossil fuels, partially offset by human-caused and volcanic aerosols; natural change has had little effect.»
+[5] «Solar activity and climate | Solar irradiance variation has been a main driver of climate change over geologic time, but its role in the recent warming has been found to be insignificant.»
+
+[[ ## question ## ]]
+What are the main causes and effects of climate change?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The main causes of climate change include both natural and human-induced factors. Natural factors consist of biotic processes, variations in solar radiation, plate tectonics, and volcanic eruptions. However, the primary drivers of ongoing climate change, often referred to as "global warming," are human activities, particularly the emissions of greenhouse gases from burning fossil fuels. The effects of climate change are significant and include environmental and social changes such as glacier retreat, altered seasonal events, and impacts on agricultural productivity. Additionally, climate change poses serious hazards to human health, leading to extreme weather events, loss of biodiversity, and increased spread of infectious diseases.
+
+[[ ## answer ## ]]
+The main causes of climate change are natural factors like biotic processes, solar radiation variations, plate tectonics, and volcanic eruptions, but primarily human activities that emit greenhouse gases. The effects include glacier retreat, changes in seasonal events, impacts on agriculture, and serious health hazards such as extreme weather, loss of biodiversity, and the spread of infectious diseases.
+
+[[ ## completed ## ]]
+
+
+
+
+

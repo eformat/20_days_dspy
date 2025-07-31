@@ -1,0 +1,202 @@
+--- Day 13: Multi-Tool Agent ---
+
+--- Building a dspy.ReAct Agent with Multiple Tools ---
+Question: What is 9362158 divided by the year of birth of David Gregory of Kinnairdy castle?
+Agent's Answer: Approximately 5761.328
+
+Question: What is the capital of Peru and what is 500 divided by 25?
+Agent's Answer: The capital of Peru is Lima, and 500 divided by 25 is 20.
+
+--- Inspecting LM History (last 2 complex ReAct trajectories) ---
+
+
+
+
+[2025-06-02T10:03:06.594789]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `next_thought` (str)
+2. `next_tool_name` (Literal['Calculator', 'WikipediaSearch', 'finish'])
+3. `next_tool_args` (dict[str, Any])
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## next_thought ## ]]
+{next_thought}
+
+[[ ## next_tool_name ## ]]
+{next_tool_name}        # note: the value you produce must exactly match (no extra characters) one of: Calculator; WikipediaSearch; finish
+
+[[ ## next_tool_args ## ]]
+{next_tool_args}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "additionalProperties": true}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the given question by leveraging available tools.
+        
+        You are an Agent. In each episode, you will be given the fields `question` as input. And you can see your past trajectory so far.
+        Your goal is to use one or more of the supplied tools to collect any necessary information for producing `answer`.
+        
+        To do this, you will interleave next_thought, next_tool_name, and next_tool_args in each turn, and also when finishing the task.
+        After each tool call, you receive a resulting observation, which gets appended to your trajectory.
+        
+        When writing next_thought, you may reason about the current situation and plan for future steps.
+        When selecting the next_tool_name and its next_tool_args, the tool must be one of:
+        
+        (1) Calculator, whose description is <desc>A tool to evaluate mathematical expressions and perform calculations.</desc>. It takes arguments {'expression': {'type': 'string'}} in JSON format.
+        (2) WikipediaSearch, whose description is <desc>A tool for searching Wikipedia for factual information.</desc>. It takes arguments {'query': {'type': 'string'}} in JSON format.
+        (3) finish, whose description is <desc>Marks the task as complete. That is, signals that all information for producing the outputs, i.e. `answer`, are now available to be extracted.</desc>. It takes arguments {} in JSON format.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of Peru and what is 500 divided by 25?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to find two pieces of information: the capital of Peru and the result of 500 divided by 25. I can use the WikipediaSearch tool to find the capital of Peru, and then I will use the Calculator tool to perform the division.
+
+[[ ## tool_name_0 ## ]]
+WikipediaSearch
+
+[[ ## tool_args_0 ## ]]
+{"query": "capital of Peru"}
+
+[[ ## observation_0 ## ]]
+[1] «Lima (disambiguation) | Lima is the capital of Peru. It may also refer to:»
+[2] «Lima | Lima ( , ] , Quechua: ] , Aymara: ] ) is the capital and the largest city of Peru. It is located in the valleys of the Chillón, Rímac and Lurín rivers, in the central coastal part of the country, overlooking the Pacific Ocean. Together with the seaport of Callao, it forms a contiguous urban area known as the Lima Metropolitan Area. With a population of more than 10 million, Lima is the most populous metropolitan area of Peru and the third-largest city in the Americas (as defined by "city proper"), behind São Paulo and Mexico City.»
+[3] «Arequipa | Arequipa (] ) is the capital and largest city of the Arequipa Region and the seat of the Constitutional Court of Peru. It is Peru's second most populous city with 861,145 inhabitants, as well as its second most populous metropolitan area as of 2016, according to the National Institute of Statistics and Informatics (INEI)»
+
+[[ ## thought_1 ## ]]
+I have found that the capital of Peru is Lima. Now, I need to calculate 500 divided by 25 using the Calculator tool.
+
+[[ ## tool_name_1 ## ]]
+Calculator
+
+[[ ## tool_args_1 ## ]]
+{"expression": "500 / 25"}
+
+[[ ## observation_1 ## ]]
+20.0
+
+Respond with the corresponding output fields, starting with the field `[[ ## next_thought ## ]]`, then `[[ ## next_tool_name ## ]]` (must be formatted as a valid Python Literal['Calculator', 'WikipediaSearch', 'finish']), then `[[ ## next_tool_args ## ]]` (must be formatted as a valid Python dict[str, Any]), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## next_thought ## ]]
+I have successfully gathered all the necessary information. The capital of Peru is Lima, and the result of 500 divided by 25 is 20. I can now finish the task.
+
+[[ ## next_tool_name ## ]]
+finish
+
+[[ ## next_tool_args ## ]]
+{}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:06.596239]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer the given question by leveraging available tools.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of Peru and what is 500 divided by 25?
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to find two pieces of information: the capital of Peru and the result of 500 divided by 25. I can use the WikipediaSearch tool to find the capital of Peru, and then I will use the Calculator tool to perform the division.
+
+[[ ## tool_name_0 ## ]]
+WikipediaSearch
+
+[[ ## tool_args_0 ## ]]
+{"query": "capital of Peru"}
+
+[[ ## observation_0 ## ]]
+[1] «Lima (disambiguation) | Lima is the capital of Peru. It may also refer to:»
+[2] «Lima | Lima ( , ] , Quechua: ] , Aymara: ] ) is the capital and the largest city of Peru. It is located in the valleys of the Chillón, Rímac and Lurín rivers, in the central coastal part of the country, overlooking the Pacific Ocean. Together with the seaport of Callao, it forms a contiguous urban area known as the Lima Metropolitan Area. With a population of more than 10 million, Lima is the most populous metropolitan area of Peru and the third-largest city in the Americas (as defined by "city proper"), behind São Paulo and Mexico City.»
+[3] «Arequipa | Arequipa (] ) is the capital and largest city of the Arequipa Region and the seat of the Constitutional Court of Peru. It is Peru's second most populous city with 861,145 inhabitants, as well as its second most populous metropolitan area as of 2016, according to the National Institute of Statistics and Informatics (INEI)»
+
+[[ ## thought_1 ## ]]
+I have found that the capital of Peru is Lima. Now, I need to calculate 500 divided by 25 using the Calculator tool.
+
+[[ ## tool_name_1 ## ]]
+Calculator
+
+[[ ## tool_args_1 ## ]]
+{"expression": "500 / 25"}
+
+[[ ## observation_1 ## ]]
+20.0
+
+[[ ## thought_2 ## ]]
+I have successfully gathered all the necessary information. The capital of Peru is Lima, and the result of 500 divided by 25 is 20. I can now finish the task.
+
+[[ ## tool_name_2 ## ]]
+finish
+
+[[ ## tool_args_2 ## ]]
+{}
+
+[[ ## observation_2 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The capital of Peru is Lima, which I found through a search. Additionally, I calculated 500 divided by 25, which equals 20. Therefore, I have both pieces of information needed to answer the question.
+
+[[ ## answer ## ]]
+The capital of Peru is Lima, and 500 divided by 25 is 20.
+
+[[ ## completed ## ]]
+
+
+
+
+

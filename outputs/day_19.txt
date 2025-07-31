@@ -1,0 +1,153 @@
+--- Day 19: Advanced Refinement with Refine ---
+
+--- Step 1: Define a Refinement-Driven Metric (LLM-as-Judge) ---
+Reward function defined: conciseness_and_accuracy_reward
+
+--- Step 2: Implement Refine Module ---
+Question: Briefly explain the concept of photosynthesis.
+Refined Answer: Photosynthesis converts sunlight, CO2, and water into glucose and oxygen.
+
+Question: What is the capital of New Zealand? Be extremely concise.
+Refined Answer: Wellington
+
+--- Inspecting LM History (last 2 refinement attempts) ---
+
+
+
+
+[2025-06-02T10:03:12.764245]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `answer` (str)
+3. `assessment_question` (str): A specific question to evaluate the answer
+Your output fields are:
+1. `reasoning` (str)
+2. `assessment_result` (bool): True if assessment is positive, False otherwise
+3. `feedback` (str): Specific feedback for improvement if False
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## assessment_question ## ]]
+{assessment_question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## assessment_result ## ]]
+{assessment_result}        # note: the value you produce must be True or False
+
+[[ ## feedback ## ]]
+{feedback}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Assess the quality of an answer along specific dimensions.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of New Zealand? Be extremely concise.
+
+[[ ## answer ## ]]
+Wellington
+
+[[ ## assessment_question ## ]]
+Is the answer concise (under 20 words)?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## assessment_result ## ]]` (must be formatted as a valid Python bool), then `[[ ## feedback ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The answer "Wellington" is concise, consisting of only one word, which is well under the 20-word limit.
+
+[[ ## assessment_result ## ]]
+True
+
+[[ ## feedback ## ]]
+The answer is perfect as it is concise and directly addresses the question.
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:12.764711]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `answer` (str)
+3. `assessment_question` (str): A specific question to evaluate the answer
+Your output fields are:
+1. `reasoning` (str)
+2. `assessment_result` (bool): True if assessment is positive, False otherwise
+3. `feedback` (str): Specific feedback for improvement if False
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## assessment_question ## ]]
+{assessment_question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## assessment_result ## ]]
+{assessment_result}        # note: the value you produce must be True or False
+
+[[ ## feedback ## ]]
+{feedback}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Assess the quality of an answer along specific dimensions.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of New Zealand? Be extremely concise.
+
+[[ ## answer ## ]]
+Wellington
+
+[[ ## assessment_question ## ]]
+Is the answer factually accurate and directly addresses the question?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## assessment_result ## ]]` (must be formatted as a valid Python bool), then `[[ ## feedback ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The answer "Wellington" is factually accurate as it is indeed the capital of New Zealand. Additionally, it directly addresses the question in a concise manner, fulfilling the requirement for brevity.
+
+[[ ## assessment_result ## ]]
+True
+
+[[ ## feedback ## ]]
+No feedback needed; the answer is correct and concise.
+
+[[ ## completed ## ]]
+
+
+
+
+

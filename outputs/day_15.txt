@@ -1,0 +1,255 @@
+--- Day 15: Specialized Domain Agent ---
+
+--- Building a Specialized Domain Agent with Multiple Domain Tools ---
+
+--- Testing Medical Question ---
+Question: What is hypertension?
+Agent's Answer: Hypertension is a medical condition characterized by high blood pressure, where the force of blood against the artery walls is consistently too high, potentially leading to health issues such as heart disease.
+
+--- Testing Financial Question ---
+Question: What is the current stock price of AAPL?
+Agent's Answer: The current stock price of AAPL is 170.0.
+
+--- Testing another Medical Question ---
+Question: Tell me about migraine.
+Agent's Answer: A migraine is a severe throbbing headache or a pulsing sensation, usually on one side of the head, often accompanied by nausea, vomiting, and extreme sensitivity to light and sound.
+
+--- Inspecting LM History (last 3 complex ReAct trajectories) ---
+
+
+
+
+[2025-06-02T10:03:08.348930]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `next_thought` (str)
+2. `next_tool_name` (Literal['MedicalDefinitionLookup', 'StockPriceChecker', 'finish'])
+3. `next_tool_args` (dict[str, Any])
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## next_thought ## ]]
+{next_thought}
+
+[[ ## next_tool_name ## ]]
+{next_tool_name}        # note: the value you produce must exactly match (no extra characters) one of: MedicalDefinitionLookup; StockPriceChecker; finish
+
+[[ ## next_tool_args ## ]]
+{next_tool_args}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "additionalProperties": true}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions within a specialized domain by using relevant tools.
+        
+        You are an Agent. In each episode, you will be given the fields `question` as input. And you can see your past trajectory so far.
+        Your goal is to use one or more of the supplied tools to collect any necessary information for producing `answer`.
+        
+        To do this, you will interleave next_thought, next_tool_name, and next_tool_args in each turn, and also when finishing the task.
+        After each tool call, you receive a resulting observation, which gets appended to your trajectory.
+        
+        When writing next_thought, you may reason about the current situation and plan for future steps.
+        When selecting the next_tool_name and its next_tool_args, the tool must be one of:
+        
+        (1) MedicalDefinitionLookup, whose description is <desc>A tool to look up simplified definitions of medical terms. Input should be a single medical term.</desc>. It takes arguments {'term': {'type': 'string'}} in JSON format.
+        (2) StockPriceChecker, whose description is <desc>A tool to check the current simulated stock price of a given company ticker symbol (e.g., AAPL, GOOG, MSFT).</desc>. It takes arguments {'ticker': {'type': 'string'}} in JSON format.
+        (3) finish, whose description is <desc>Marks the task as complete. That is, signals that all information for producing the outputs, i.e. `answer`, are now available to be extracted.</desc>. It takes arguments {} in JSON format.
+
+
+User message:
+
+[[ ## question ## ]]
+Tell me about migraine.
+
+[[ ## trajectory ## ]]
+
+
+Respond with the corresponding output fields, starting with the field `[[ ## next_thought ## ]]`, then `[[ ## next_tool_name ## ]]` (must be formatted as a valid Python Literal['MedicalDefinitionLookup', 'StockPriceChecker', 'finish']), then `[[ ## next_tool_args ## ]]` (must be formatted as a valid Python dict[str, Any]), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## next_thought ## ]]
+I need to gather a simplified definition of migraine to provide a clear and concise answer to the question.
+
+[[ ## next_tool_name ## ]]
+MedicalDefinitionLookup
+
+[[ ## next_tool_args ## ]]
+{"term":"migraine"}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:08.350077]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `next_thought` (str)
+2. `next_tool_name` (Literal['MedicalDefinitionLookup', 'StockPriceChecker', 'finish'])
+3. `next_tool_args` (dict[str, Any])
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## next_thought ## ]]
+{next_thought}
+
+[[ ## next_tool_name ## ]]
+{next_tool_name}        # note: the value you produce must exactly match (no extra characters) one of: MedicalDefinitionLookup; StockPriceChecker; finish
+
+[[ ## next_tool_args ## ]]
+{next_tool_args}        # note: the value you produce must adhere to the JSON schema: {"type": "object", "additionalProperties": true}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions within a specialized domain by using relevant tools.
+        
+        You are an Agent. In each episode, you will be given the fields `question` as input. And you can see your past trajectory so far.
+        Your goal is to use one or more of the supplied tools to collect any necessary information for producing `answer`.
+        
+        To do this, you will interleave next_thought, next_tool_name, and next_tool_args in each turn, and also when finishing the task.
+        After each tool call, you receive a resulting observation, which gets appended to your trajectory.
+        
+        When writing next_thought, you may reason about the current situation and plan for future steps.
+        When selecting the next_tool_name and its next_tool_args, the tool must be one of:
+        
+        (1) MedicalDefinitionLookup, whose description is <desc>A tool to look up simplified definitions of medical terms. Input should be a single medical term.</desc>. It takes arguments {'term': {'type': 'string'}} in JSON format.
+        (2) StockPriceChecker, whose description is <desc>A tool to check the current simulated stock price of a given company ticker symbol (e.g., AAPL, GOOG, MSFT).</desc>. It takes arguments {'ticker': {'type': 'string'}} in JSON format.
+        (3) finish, whose description is <desc>Marks the task as complete. That is, signals that all information for producing the outputs, i.e. `answer`, are now available to be extracted.</desc>. It takes arguments {} in JSON format.
+
+
+User message:
+
+[[ ## question ## ]]
+Tell me about migraine.
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to gather a simplified definition of migraine to provide a clear and concise answer to the question.
+
+[[ ## tool_name_0 ## ]]
+MedicalDefinitionLookup
+
+[[ ## tool_args_0 ## ]]
+{"term": "migraine"}
+
+[[ ## observation_0 ## ]]
+Definition of migraine: A severe throbbing headache or a pulsing sensation, usually on one side of the head. It's often accompanied by nausea, vomiting, and extreme sensitivity to light and sound.
+
+Respond with the corresponding output fields, starting with the field `[[ ## next_thought ## ]]`, then `[[ ## next_tool_name ## ]]` (must be formatted as a valid Python Literal['MedicalDefinitionLookup', 'StockPriceChecker', 'finish']), then `[[ ## next_tool_args ## ]]` (must be formatted as a valid Python dict[str, Any]), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## next_thought ## ]]
+I have gathered a definition of migraine, which describes it as a severe throbbing headache often accompanied by nausea and sensitivity to light and sound. Now, I can finish the task as I have enough information to provide a complete answer.
+
+[[ ## next_tool_name ## ]]
+finish
+
+[[ ## next_tool_args ## ]]
+{}
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:08.351227]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+2. `trajectory` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## trajectory ## ]]
+{trajectory}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions within a specialized domain by using relevant tools.
+
+
+User message:
+
+[[ ## question ## ]]
+Tell me about migraine.
+
+[[ ## trajectory ## ]]
+[[ ## thought_0 ## ]]
+I need to gather a simplified definition of migraine to provide a clear and concise answer to the question.
+
+[[ ## tool_name_0 ## ]]
+MedicalDefinitionLookup
+
+[[ ## tool_args_0 ## ]]
+{"term": "migraine"}
+
+[[ ## observation_0 ## ]]
+Definition of migraine: A severe throbbing headache or a pulsing sensation, usually on one side of the head. It's often accompanied by nausea, vomiting, and extreme sensitivity to light and sound.
+
+[[ ## thought_1 ## ]]
+I have gathered a definition of migraine, which describes it as a severe throbbing headache often accompanied by nausea and sensitivity to light and sound. Now, I can finish the task as I have enough information to provide a complete answer.
+
+[[ ## tool_name_1 ## ]]
+finish
+
+[[ ## tool_args_1 ## ]]
+{}
+
+[[ ## observation_1 ## ]]
+Completed.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+A migraine is characterized by a severe throbbing headache, typically on one side of the head, and is often accompanied by symptoms such as nausea, vomiting, and heightened sensitivity to light and sound. This definition provides a clear understanding of what a migraine entails.
+
+[[ ## answer ## ]]
+A migraine is a severe throbbing headache or a pulsing sensation, usually on one side of the head, often accompanied by nausea, vomiting, and extreme sensitivity to light and sound.
+
+[[ ## completed ## ]]
+
+
+
+
+

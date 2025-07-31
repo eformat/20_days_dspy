@@ -1,0 +1,188 @@
+--- Day 1: Setting up DSPy and Simple Q&A ---
+
+--- Direct LM Call ---
+Direct LM Response: Hello! How can I assist you today?
+
+--- Using dspy.Predict for Basic QA ---
+Question: What is the capital of France?
+Predicted Answer: Paris
+
+Question: Who painted the Mona Lisa?
+Predicted Answer: Leonardo da Vinci
+
+--- Inspecting LM History (last 2 calls) ---
+
+
+
+
+[2025-06-02T10:03:03.199868]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `answer` (str): often between 1 and 5 words
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions with short factoid answers.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of France?
+
+Respond with the corresponding output fields, starting with the field `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## answer ## ]]
+Paris
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:03.200100]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `answer` (str): often between 1 and 5 words
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions with short factoid answers.
+
+
+User message:
+
+[[ ## question ## ]]
+Who painted the Mona Lisa?
+
+Respond with the corresponding output fields, starting with the field `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## answer ## ]]
+Leonardo da Vinci
+
+[[ ## completed ## ]]
+
+
+
+
+
+Question: What is the capital of Egypt?
+Predicted Answer: The capital of Egypt is Cairo.
+
+Question: Who performed the song 'Bohemian Rhapsody'?
+Predicted Answer: The song 'Bohemian Rhapsody' was performed by the British rock band Queen.
+
+--- Inspecting LM History (last 2 calls) ---
+
+
+
+
+[2025-06-02T10:03:03.200949]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `question`, produce the fields `answer`.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of Egypt?
+
+Respond with the corresponding output fields, starting with the field `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## answer ## ]]
+The capital of Egypt is Cairo.
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:03.201372]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `answer` (str)
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Given the fields `question`, produce the fields `answer`.
+
+
+User message:
+
+[[ ## question ## ]]
+Who performed the song 'Bohemian Rhapsody'?
+
+Respond with the corresponding output fields, starting with the field `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## answer ## ]]
+The song 'Bohemian Rhapsody' was performed by the British rock band Queen.
+
+[[ ## completed ## ]]
+
+
+
+
+

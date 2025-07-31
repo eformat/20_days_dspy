@@ -1,0 +1,181 @@
+--- Day 3: Math Problem Solver ---
+
+--- Using dspy.ChainOfThought for Math Problems ---
+Question: If a train travels at 60 miles per hour for 2.5 hours, how far does it travel?
+Reasoning: To find the distance traveled by the train, we can use the formula: 
+
+Distance = Speed × Time
+
+Here, the speed of the train is 60 miles per hour and the time traveled is 2.5 hours. 
+
+So, we calculate:
+
+Distance = 60 miles/hour × 2.5 hours = 150 miles
+Answer: 150.0 miles
+
+Question: Sarah has 5 apples. She buys 7 more apples from the store. How many apples does Sarah have now?
+Reasoning: To find out how many apples Sarah has now, we need to add the number of apples she originally had to the number of apples she bought. Sarah starts with 5 apples and buys 7 more. Therefore, the total number of apples is calculated as follows: 
+
+5 (original apples) + 7 (bought apples) = 12 apples.
+Answer: 12.0 apples
+
+Question: Two dice are tossed. What is the probability that the sum equals two?
+Reasoning: When two dice are tossed, each die has 6 faces, resulting in a total of 6 * 6 = 36 possible outcomes. The only way to achieve a sum of 2 is if both dice show a 1 (i.e., (1,1)). There is only 1 favorable outcome for this event. Therefore, the probability of the sum equaling 2 is the number of favorable outcomes divided by the total number of outcomes, which is 1/36.
+Answer: 0.027777777777777776
+
+--- Inspecting LM History (last 3 calls) ---
+
+
+
+
+[2025-06-02T10:03:15.366727]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (float): numerical answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Solve the given math question and output the numerical answer.
+
+
+User message:
+
+[[ ## question ## ]]
+If a train travels at 60 miles per hour for 2.5 hours, how far does it travel?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+To find the distance traveled by the train, we can use the formula: 
+
+Distance = Speed × Time
+
+Here, the speed of the train is 60 miles per hour and the time traveled is 2.5 hours. 
+
+So, we calculate:
+
+Distance = 60 miles/hour × 2.5 hours = 150 miles
+
+[[ ## answer ## ]]
+150.0
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:15.367316]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (float): numerical answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Solve the given math question and output the numerical answer.
+
+
+User message:
+
+[[ ## question ## ]]
+Sarah has 5 apples. She buys 7 more apples from the store. How many apples does Sarah have now?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+To find out how many apples Sarah has now, we need to add the number of apples she originally had to the number of apples she bought. Sarah starts with 5 apples and buys 7 more. Therefore, the total number of apples is calculated as follows: 
+
+5 (original apples) + 7 (bought apples) = 12 apples.
+
+[[ ## answer ## ]]
+12.0
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:15.367637]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (float): numerical answer
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}        # note: the value you produce must be a single float value
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Solve the given math question and output the numerical answer.
+
+
+User message:
+
+[[ ## question ## ]]
+Two dice are tossed. What is the probability that the sum equals two?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]` (must be formatted as a valid Python float), and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+When two dice are tossed, each die has 6 faces, resulting in a total of 6 * 6 = 36 possible outcomes. The only way to achieve a sum of 2 is if both dice show a 1 (i.e., (1,1)). There is only 1 favorable outcome for this event. Therefore, the probability of the sum equaling 2 is the number of favorable outcomes divided by the total number of outcomes, which is 1/36.
+
+[[ ## answer ## ]]
+0.027777777777777776
+
+[[ ## completed ## ]]
+
+
+
+
+

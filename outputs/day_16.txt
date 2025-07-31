@@ -1,0 +1,102 @@
+--- Day 16: Metrics & Optimization Basics ---
+
+--- Step 1: Define a Metric ---
+Metric function defined: exact_match_metric
+
+--- Step 2: Evaluate a Baseline Program ---
+Evaluating baseline program...
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 7570.95it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 9218.25it/s]
+                              question example_answer    pred_answer  \
+0       What is the capital of France?          Paris          Paris   
+1  What is the largest ocean on Earth?  Pacific Ocean  Pacific Ocean   
+
+  exact_match_metric  
+0          ✔️ [True]  
+1          ✔️ [True]  
+Baseline Program Score: 100.0
+
+--- Step 3: Basic Optimization with BootstrapFewShot ---
+Compiling program with BootstrapFewShot...
+Bootstrapped 2 full traces after 2 examples for up to 1 rounds, amounting to 2 attempts.
+
+--- Step 4: Evaluate the Optimized Program ---
+Evaluating optimized program...
+  0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 1.00 / 1 (100.0%):   0%|          | 0/2 [00:00<?, ?it/s]Average Metric: 2.00 / 2 (100.0%):  50%|█████     | 1/2 [00:00<00:00, 1227.12it/s]Average Metric: 2.00 / 2 (100.0%): 100%|██████████| 2/2 [00:00<00:00, 2358.34it/s]
+                              question example_answer    pred_answer  \
+0       What is the capital of France?          Paris          Paris   
+1  What is the largest ocean on Earth?  Pacific Ocean  Pacific Ocean   
+
+  exact_match_metric  
+0          ✔️ [True]  
+1          ✔️ [True]  
+Optimized Program Score: 100.0
+
+--- Inspecting Optimized Program's History (last call with demos) ---
+
+
+
+
+[2025-06-02T10:03:09.610713]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `answer` (str): often between 1 and 5 words
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions with short factoid answers.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of Canada?
+
+
+Assistant message:
+
+[[ ## answer ## ]]
+Ottawa
+
+
+User message:
+
+[[ ## question ## ]]
+Who wrote 'To Kill a Mockingbird'?
+
+
+Assistant message:
+
+[[ ## answer ## ]]
+Harper Lee
+
+
+User message:
+
+[[ ## question ## ]]
+What is the capital of Italy?
+
+Respond with the corresponding output fields, starting with the field `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## answer ## ]]
+Rome
+
+[[ ## completed ## ]]
+
+
+
+
+

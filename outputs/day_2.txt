@@ -1,0 +1,110 @@
+--- Day 2: Chain of Thought ---
+
+--- Using dspy.ChainOfThought for Enhanced QA ---
+Question: What is the primary function of chlorophyll in plants?
+Reasoning: Chlorophyll is a pigment found in the chloroplasts of plants that plays a crucial role in photosynthesis. It absorbs light energy, primarily from the sun, and converts it into chemical energy, allowing plants to produce glucose and oxygen from carbon dioxide and water. This process is essential for plant growth and energy production.
+Answer: Photosynthesis
+
+Question: Name the largest organ in the human body.
+Reasoning: The largest organ in the human body is the skin. It serves as a protective barrier, regulates temperature, and allows for the sensation of touch.
+Answer: Skin
+
+--- Inspecting LM History (last 2 calls to see CoT format) ---
+
+
+
+
+[2025-06-02T10:03:13.603629]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str): often between 1 and 5 words
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions with short factoid answers.
+
+
+User message:
+
+[[ ## question ## ]]
+What is the primary function of chlorophyll in plants?
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+Chlorophyll is a pigment found in the chloroplasts of plants that plays a crucial role in photosynthesis. It absorbs light energy, primarily from the sun, and converts it into chemical energy, allowing plants to produce glucose and oxygen from carbon dioxide and water. This process is essential for plant growth and energy production.
+
+[[ ## answer ## ]]
+Photosynthesis
+
+[[ ## completed ## ]]
+
+
+
+
+
+[2025-06-02T10:03:13.603951]
+
+System message:
+
+Your input fields are:
+1. `question` (str)
+Your output fields are:
+1. `reasoning` (str)
+2. `answer` (str): often between 1 and 5 words
+All interactions will be structured in the following way, with the appropriate values filled in.
+
+[[ ## question ## ]]
+{question}
+
+[[ ## reasoning ## ]]
+{reasoning}
+
+[[ ## answer ## ]]
+{answer}
+
+[[ ## completed ## ]]
+In adhering to this structure, your objective is: 
+        Answer questions with short factoid answers.
+
+
+User message:
+
+[[ ## question ## ]]
+Name the largest organ in the human body.
+
+Respond with the corresponding output fields, starting with the field `[[ ## reasoning ## ]]`, then `[[ ## answer ## ]]`, and then ending with the marker for `[[ ## completed ## ]]`.
+
+
+Response:
+
+[[ ## reasoning ## ]]
+The largest organ in the human body is the skin. It serves as a protective barrier, regulates temperature, and allows for the sensation of touch.
+
+[[ ## answer ## ]]
+Skin
+
+[[ ## completed ## ]]
+
+
+
+
+
