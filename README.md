@@ -25,6 +25,7 @@ pip install --upgrade --quiet \
 MLFLow
 
 ```bash
+cd ~/git/dspy-tool-use
 mlflow ui --port 5500 &
 ```
 
